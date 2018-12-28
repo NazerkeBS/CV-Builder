@@ -8,7 +8,7 @@
 <h3> Overview </h3>
 <p> This is a dynamic web application hosted on Apache Tomcat Server (version 9.0). This is a project for Application Development course in my university. The system enables user to create online resume by filling in the form and enables the user to download  one-page CV to local machine</p>
 <h3> Installation and Deployment </h3>
-<p> I used a few tools: Apache Tomcat Server (v9.0), MySQL Connector (8.0.12), jQuery (1.7), jsPDF API. </p>
+<p> I used a few tools: Apache Tomcat Server (v9.0), MySQL Connector (8.0.12), jQuery (1.7), jsPDF API (https://parall.ax/products/jspdf). </p>
 <p> git clone https://github.com/NazerkeBS/cv-maker.git </p> 
 <p> download the server (v9.0) to your local machine https://tomcat.apache.org/download-90.cgi</p>
 <p> you need Eclipse Java EE IDE in order to be able to create a new server; https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers  </p>
