@@ -1,0 +1,284 @@
+#experience_box{
+	padding:10px;
+	margin-bottom:10px;
+}
+#entry_add{
+	display: block;
+    height: 40px;
+	width:80px;
+	background-color:green;
+	border-radius:10px;
+	color:white;
+}
+#add_experience{
+	
+	display: block;
+    height: 40px;
+	width:80px;
+	background-color:green;
+	border-radius:10px;
+	color:white;
+}
+
+#remove {
+	display: block;
+	border-radius:10px;
+    height: 40px;
+	width:80px;
+	background-color:blue;
+}
+#entry_remove{
+	display: block;
+	border-radius:10px;
+    height: 40px;
+	width:80px;
+	background-color:blue;
+	
+}
+
+body{
+	margin:0;
+	padding:0;
+	font-family: Quicksand;
+}
+
+nav{
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height:100px;
+	padding:10px 100px;
+	box-sizing:border-box;
+	transition:.3s;
+}
+#contact {
+	width:900px;
+	float:left;
+	overflow:hidden;
+	padding-left: 100px;
+}
+.icon{
+	display:inline-block;   	
+}
+.address {
+	display:inline-block;	
+}
+nav.black{
+	background: rgba(0,0,0,0.8);
+	height: 100px;
+	padding: 10px 100px;
+}
+nav .logo{
+	padding: 22px 20px;
+	height: 80px;
+	float: left;
+	font-size: 24px;
+	transition: .3s;
+}
+nav.black .logo{
+	color: #fff;
+}
+nav ul {
+	list-style: none;
+	float:right;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+}
+nav ul li a{
+	line-height: 80px;
+	color:#151515;
+	padding: 12px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .3s;
+}
+nav.black ul li a {
+	color: #fff;
+}
+
+nav ul li a:focus{
+	outline: none;
+}
+nav ul li a.active{
+	background: #E2471F;
+	color:#fff;
+	border-radius: 6px;
+}
+section.sec1 {
+	width: 100%;
+	height: 80vh;
+	background:url(bg.jpg);
+	background-size:cover;
+	background-position:center;
+}
+section.content {
+	width: 100%;
+	height: 100vh;
+}
+.content{
+	margin-top:0px;	
+}
+#subtext{
+	margin:10px auto;
+	text-align:justify;
+	font-size:16px;
+	line-height:10px;
+	
+}
+.content p{
+	width:900px;
+	margin:0px auto;
+	text-align:justify;
+	font-size:24px;
+	line-height:30px;
+}
+
+#login-container{
+	width:400px;
+	height:600px;
+	position:absolute;
+	top:50%;
+	left: 50%;
+	transform:translate(-50%, 80%);
+	color:gray;
+	text-align:center;
+}
+#login-container-index{
+	width:400px;
+	height:400px;
+	position:relative;
+	top:50%;
+	left: 50%;
+	transform:translate(-50%, 30%);
+	color:gray;
+	text-align:center;
+}
+#register-container{
+	width:400px;
+	height:600px;
+	position:absolute;
+	top:50%;
+	left: 50%;
+	transform:translate(-50%, 180%);
+	color:gray;
+	text-align:center;
+}
+.login-container h1{
+	font-size: 40px;
+	margin-top: 125px;
+	margin-bottom: 60px;
+	text-align:center;
+}
+.login-container p{
+	font-size: 50px;
+	margin-top: 110px;
+	margin-bottom: 40px;
+	text-align:center;
+}
+.login-container-index h1{
+	font-size: 40px;
+	margin-top: 125px;
+	margin-bottom: 60px;
+	text-align:center;
+}
+.login-container-index p{
+	font-size: 50px;
+	margin-top: 110px;
+	margin-bottom: 40px;
+	text-align:center;
+	color:green;
+}
+.register-container h1{
+	font-size: 40px;
+	margin-top: 125px;
+	margin-bottom: 60px;
+	text-align:center;
+}
+.tbox{
+	width: 260px;
+	height:40px;
+	background:#f1f1f1b3;
+	border-radius: 10px;
+	margin:0px auto;
+}
+.tbox input{
+	background:none;
+	border: none;
+	outline:none;
+	text-align:center;
+	width:90%;
+	line-height:37px;
+	font-family:"Montserrat", sans-serif;
+	font-size:14px;
+	color:#333;
+}
+.btn{
+	width:260px;
+	height: 40px;
+	background: #3498db;
+	border-radius: 10px;
+	margin: 14px auto;
+	display: block;
+	font-family:"Montserrat", sans-serif;
+	font-size: 16px;
+	border: none;
+	color: white;
+	cursor:pointer;
+}
+.register-btn{
+	width:260px;
+	height: 40px;
+	background: #E2471F;
+	border-radius: 10px;
+	margin: 14px auto;
+	display: block;
+	font-family:"Montserrat", sans-serif;
+	font-size: 16px;
+	border: none;
+	color: white;
+	cursor:pointer;
+}
+.register-btn:hover {
+  background-color: red; 
+}
+
+.btn:hover {
+  background-color: blue; 
+}
+#steps{
+	margin-top: 80px;
+	top:50%;
+	left:50%;
+	transform:translate(40%, 10%);
+}
+#steps li {
+	font-size: 20px;
+	padding:4px;
+	margin-bottom:5px;
+	color:purple;
+}
+#steps p{
+	color:red;
+	font-size: 25px;
+	padding:4px;
+	margin-bottom:5px;
+}
+
+#cvform {
+	width:900px;
+	height:900px;
+	margin-top: 0px;
+	top:20%;
+	left:20%;
+	transform:translate(40%, 10%);
+	
+}
+#HTMLtoPDF p{
+	text-align: left;
+}

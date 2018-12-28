@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CV builder</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
+	 <meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <meta http-equiv="Expires" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" ></script>
+	
+	<script type="text/javascript" src="js/myjs.js"></script>
+		
+	<script>
+	/* set uploaded image visible in the browser */	
+	var loadFile = function(event) {
+		var output = document.getElementById('output');
+		output.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+	var i = 0;
+	/* add HTML DOM element */ 
+	function addEntry() {
+		var div = document.createElement('div');
+		i = i + 1
+		idx = 'ref' + i + ''
+		
+		div.className = 'tbox';
+		div.innerHTML =
+        '<input type="text" id=' + idx + ' placeholder="reference " name="ref"/>\
+        <input type="button" id="entry_remove" value="remove entry" onclick="removeEntry(this)">';
+
+		document.getElementById('ref').appendChild(div);
+	}
+    
+    /* remove HTML DOM element */
+	function removeEntry(input) {
+	    if(i>0) {
+			i = i - 1
+		}
+		document.getElementById('ref').removeChild(input.parentNode);
+    }
+
+	var j =  0
+	/* add multiple HTML DOM element */
+	function addExperience(){
+			j = j + 1
+			
+			var div_remove = document.createElement('div')
+			div_remove.className = 'button'
+			div_remove.innerHTML = '<input type="button" id="remove" value="remove" onclick="remove(this)">';
+			
+			var div_title = document.createElement('div');			 
+			idx = 'jobtitle' + j + ''
+			div_title.className = 'tbox';
+			div_title.innerHTML = '<input type="text" id=' + idx + ' placeholder="job title" name="jobtitle"/>';
+			div_remove.appendChild(div_title)
+			
+			var div_companyname = document.createElement('div')
+			idx_name = 'companyname' + j + ''
+			div_companyname.className = 'tbox'
+			div_companyname.innerHTML = '<input type="text" id=' + idx_name + ' placeholder="company name"/>';
+			div_title.appendChild(div_companyname);
+			
+			var div_duration = document.createElement('div')
+			idx_duration  = 'duration' + j + ''
+			div_duration.className = 'tbox'
+			div_duration.innerHTML = '<input type ="text" id=' + idx_duration + ' placeholder="yyyy-mm - yyyy-mm/present"/>'
+			div_companyname.appendChild(div_duration)
+			
+			document.getElementById('experience_box').appendChild(div_remove);
+	
+	}       
+	
+	function remove(input) {
+	    if(j>0) {
+			j = j - 1
+		}
+		document.getElementById('experience_box').removeChild(input.parentNode);
+    }
+	
+	</script>
+</head>
+<body>
+<div class="wrapper">
+		<nav>
+			<div class="logo"> CV MAKER </div>
+			<ul>
+			    <li><a> Welcome  </a> </li>
+				<li> <a href="index-login.jsp">Logout</a></li>
+			</ul>
+		</nav>
+		
+		<div id="steps">
+		    
+			<p> Steps to create Online CV</p>
+			
+			<ul>
+				<li> Click create button</li>
+				<li> Click a template</li>
+				<li> Fill in the form</li>
+				<li> Download as a pdf </li>
+			</ul>
+			
+			<input class="register-btn" value="Create" type="button" onClick="document.getElementById('template').scrollIntoView();" />
+		
+		</div>
+		<section class="content">
+			<div id="template">
+				<a href="#cvform">
+					<img border="0" alt="template#1" src="template1.jpg" width="340" height="440">
+				</a>
+			</div>
+		</section>
+			<div id = "cvform">
+			<h1> Fill in the resume form</h1>
+				<div id="HTMLtoPDF">
+				<form >
+					<h1> RESUME </h1>
+					<div>
+					    <img id="output" height="120" width="100"/>
+						<input  type="file" accept="image/*" onchange="loadFile(event)">
+					</div>
+					<p> Personal Information</p>
+					 <p> Name: </p>
+					<div class="tbox">
+						<input type="text" id="fullname" placeholder="Full Name" name="fullname"  required>
+					</div>
+					
+					 <p > Email: </p>
+					<div class="tbox">
+						<input type="email" id="email" placeholder="@email" name="email" >		
+					</div>
+					<p id="subtext"> Address: </p>
+					<div class="tbox">
+						<input type="text" id="address" placeholder="Address" name="address" >		
+					</div>	
+					<p id="subtext"> Mobile: </p>
+					<div class="tbox">
+						<input type="tel" id="phone" placeholder="Phone Number" name="phone" >
+					</div>
+    				    	    
+					<p> Educational Information </p>
+					<p id="subtext"> Degree: </p>
+					<div class="tbox">
+						<select name="degrees" id="degree" >
+    						<option value="High School">High School</option>
+    						<option value="Bachelor's Degree">Bachelor</option>
+    						<option value="Master's Degree">Master</option>
+    						<option value="PhD">PHD</option>
+  			  			</select>
+  			  		</div>
+					<p id="subtext"> Major: </p>
+  			  		<div class="tbox">
+  			  				<select name="majors" id="major">
+    							<option value="Arts">Arts</option>
+    							<option value="Electrical Engineering">Electrical Engineering</option>
+    							<option value="Humanity">Humanity</option>
+    							<option value="Communication">Communication</option>
+    							<option value="Computer Engineering">Computer Engineering</option>
+    							<option value="Computer Science">Computer Science</option>
+    							<option value="Music and Cinema">Music and Cinema </option>
+  			  				</select>
+  			  		</div>
+					<p id="subtext"> GPA: </p>
+  			  		<div class="tbox">
+  			  			<input type="text" id="gpa" placeholder="Enter GPA" name="gpa">
+  			  		</div>
+					<p>Relevant Work Experience </p>
+					<div id="experience_box">
+					<p id="subtext"> Job title: </p>
+					<div class="tbox">
+						<input type="text" id="jobtitle" placeholder="job title"  name="jobtitle">
+					</div>
+					<p id="subtext"> Company Name: </p>
+    				<div class="tbox">
+    					<input type="text" id="companyname" placeholder="company name" name="companyname">
+    				</div>
+					<p id="subtext"> Duration: </p>
+				    <div class="tbox">
+        				<input type="date" id = "start" name="start"  min="01-01-2000"/>
+				    </div>
+				    <div class="tbox">
+				    	<input  type="date" id="end" name="end"  max="01-01-2020"/>		
+				    </div>
+					<div class="tbox">
+					<input type="text" id="present" placeholder="or present"  name="present">
+					</div>
+					<input type="button" id="add_experience" value="add" onclick="addExperience()" >
+					</div>
+					
+					<p> Technical projects</p>
+					<p id="subtext"> Technical project: </p>
+				    <div class="tbox">
+				    	<input type="text" id="techprojectOne" placeholder="short description" name="techproject1">
+				    </div>
+					<p id="subtext"> Technical project: </p>
+				    <div class="tbox">
+				    	<input type="text" id="techprojectTwo" placeholder="short description" name="techproject2">
+				    </div>
+				    <p>Honors and Awards</p>
+					<p id="subtext"> Award: </p>
+				    <div class="tbox">
+				    	<input type="text" id="award" placeholder="name " name="award">
+				    </div>
+				    <p> References </p>
+					<p id="subtext"> Soft Skills: </p>
+					<div id="ref">
+						<div class="tbox">
+							<input type="text" id="reference" placeholder="reference " name="ref">
+						</div>
+					</div>
+					<input type="button" id="entry_add" value="add entry" onclick="addEntry()" >
+					</form>
+					</div>
+					<input class="register-btn" onclick="javascript:html_resume_to_pdf()" type="submit" name= "finish" value = "Download PDF" >
+		</div>
+</div>
+</body>
+</html>
